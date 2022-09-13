@@ -1,22 +1,22 @@
-{{#if material}}
-<form action="/editar/{{material._id}}" method="post">
+{{#if codigo}}
+  <form action="/editar/{{codigo._id}}" method="post">
     <input
-      value="{{material.codigo}}"
+      value="{{codigo.codigo}}"
       type="text"
       placeholder="ingresar material"
       name="codigo"
       class="form-control my-2"
     />
-    <button type="submit" class="btn btn-warning w-100 mb-2">Editar Material</button>
+    <button type="submit" class="btn btn-warning w-100 mb-2">Editar material</button>
   </form>
 {{else}}
 <form action="/" method="post">
-    <input
-      type="text"
-      placeholder="ingresar material"
-      name="codigo"
-      class="form-control my-2"
-    />
-    <button type="submit" class="btn btn-primary w-100 mb-2">Agregar material</button>
-  </form>
+  <input
+    type="text"
+    placeholder="ingresar material"
+    name="codigo"
+    class="form-control my-2"
+  />
+  <button type="submit" class="btn btn-primary w-100 mb-2">Agregar material</button>
+</form>
 {{/if}}
