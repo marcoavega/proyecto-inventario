@@ -1,22 +1,96 @@
 {{#if codigo}}
-  <form action="/editar/{{codigo._id}}" method="post">
-    <input
-      value="{{codigo.codigo}}"
-      type="text"
-      placeholder="ingresar material"
-      name="codigo"
-      class="form-control my-2"
-    />
-    <button type="submit" class="btn btn-warning w-100 mb-2">Editar material</button>
-  </form>
+  
+  <form action="/editar/{{codigo._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <div class="mb-3">
+          <label for="title" class="label-codigo-material">Codigo de material:</label>
+          <input
+            type="number"
+            name="codigo"
+            class="form-control"
+            value="{{codigo.codigo}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="label-nombre-material">Nombre de material:</label>
+           <input
+            type="text"
+            name="nombre"
+            class="form-control"
+            value="{{nombre.nombre}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="label-nombre-material">Descripción de material:</label>
+           <input
+            type="text"
+            name="descripcion"
+            class="form-control"
+            value="{{descripcion.descripcion}}"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="title" class="label-codigo-material">Cantidad de material:</label>
+          <input
+            type="number"
+            name="cantidad"
+            class="form-control"
+            value="{{cantidad.cantidad}}"
+          />
+        <button class="btn btn-primary w-100" type="submit">
+          Guardar
+        </button>
+      </form>
 {{else}}
 <form action="/" method="post">
   <input
-    type="text"
-    placeholder="ingresar material"
+    type="number"
+    placeholder="ingresar codigo de material"
     name="codigo"
+    class="form-control my-2"
+  />
+   <input
+    type="text"
+    placeholder="ingresar nombre de material"
+    name="nombre"
+    class="form-control my-2"
+  />
+   <input
+    type="text"
+    placeholder="ingresar descripción"
+    name="descripcion"
+    class="form-control my-2"
+  />
+  <input
+    type="number"
+    placeholder="ingresar cantidad"
+    name="cantidad"
     class="form-control my-2"
   />
   <button type="submit" class="btn btn-primary w-100 mb-2">Agregar material</button>
 </form>
+
+<div class="container text-center tabla-material">
+  <div class="row">
+    <div class="col">
+      codigo
+    </div>
+    <div class="col">
+      material
+    </div>
+    <div class="col">
+      Descripción
+    </div>
+    <div class="col">
+      Existencia
+    </div>
+    <div class="col">
+      editar
+    </div>
+    <div class="col">
+      eliminar
+    </div>
+  </div>
+</div>
+
 {{/if}}
