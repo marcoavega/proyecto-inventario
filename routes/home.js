@@ -6,6 +6,10 @@ const {
   eliminarMaterial,
   editarMaterialForm,
   editarMaterial,
+  leerMaterialEntrada,
+  entradaMaterial,
+  leerMaterialSalida,
+  salidaMaterial
   //redireccionamiento
 } = require("../controllers/homeController");
 
@@ -18,5 +22,9 @@ router.post("/", materialValidar, agregarMaterial);
 router.get("/editar/:id",editarMaterialForm);
 router.post("/editar/:id",editarMaterial);
 router.get("/eliminar/:id", eliminarMaterial);
+router.get("/entrada",leerMaterialEntrada);
+router.post("/entrada/:id",entradaMaterial);
+router.get("/salida",leerMaterialSalida);
+router.post("/salida/:id",salidaMaterial);
 
 module.exports = router;

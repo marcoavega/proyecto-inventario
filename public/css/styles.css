@@ -14,11 +14,11 @@ color: rgb(255, 255, 255);
     background-color: rgb(47, 47, 47);
     color: rgb(255, 255, 255);
     border: solid rgb(0, 0, 0) ;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
-.label-codigo-material{
+.letras-blancas{
     color: rgb(255,255,255)
 }
-.label-nombre-material{
-    color: rgb(255,255,255);
+.div-form-entrada{
+    padding-left: 30%;
 }

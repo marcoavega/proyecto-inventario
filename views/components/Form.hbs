@@ -1,96 +1,171 @@
 {{#if codigo}}
-  
-  <form action="/editar/{{codigo._id}}?_method=PUT" method="POST">
-        <input type="hidden" name="_method" value="PUT" />
-        <div class="mb-3">
-          <label for="title" class="label-codigo-material">Codigo de material:</label>
-          <input
-            type="number"
-            name="codigo"
-            class="form-control"
-            value="{{codigo.codigo}}"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="description" class="label-nombre-material">Nombre de material:</label>
-           <input
-            type="text"
-            name="nombre"
-            class="form-control"
-            value="{{nombre.nombre}}"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="description" class="label-nombre-material">Descripción de material:</label>
-           <input
-            type="text"
-            name="descripcion"
-            class="form-control"
-            value="{{descripcion.descripcion}}"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="title" class="label-codigo-material">Cantidad de material:</label>
-          <input
-            type="number"
-            name="cantidad"
-            class="form-control"
-            value="{{cantidad.cantidad}}"
-          />
-        <button class="btn btn-primary w-100" type="submit">
-          Guardar
-        </button>
-      </form>
-{{else}}
-<form action="/" method="post">
-  <input
-    type="number"
-    placeholder="ingresar codigo de material"
-    name="codigo"
-    class="form-control my-2"
-  />
-   <input
-    type="text"
-    placeholder="ingresar nombre de material"
-    name="nombre"
-    class="form-control my-2"
-  />
-   <input
-    type="text"
-    placeholder="ingresar descripción"
-    name="descripcion"
-    class="form-control my-2"
-  />
-  <input
-    type="number"
-    placeholder="ingresar cantidad"
-    name="cantidad"
-    class="form-control my-2"
-  />
-  <button type="submit" class="btn btn-primary w-100 mb-2">Agregar material</button>
-</form>
 
-<div class="container text-center tabla-material">
-  <div class="row">
-    <div class="col">
-      codigo
+  <form action="/editar/{{codigo._id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT" />
+    <div class="mb-3">
+      <label for="codigo" class="letras-blancas">Codigo de material:</label>
+      <input
+        type="number"
+        name="codigo"
+        class="form-control"
+        value="{{codigo.codigo}}"
+      />
     </div>
-    <div class="col">
-      material
+    <div class="mb-3">
+      <label for="nombre" class="letras-blancas">Nombre de material:</label>
+      <input
+        type="text"
+        name="nombre"
+        class="form-control"
+        value="{{nombre.nombre}}"
+      />
     </div>
-    <div class="col">
-      Descripción
+    <div class="mb-3">
+      <label for="description" class="letras-blancas">Descripción de material:</label>
+      <input
+        type="text"
+        name="descripcion"
+        class="form-control"
+        value="{{descripcion.descripcion}}"
+      />
     </div>
-    <div class="col">
-      Existencia
+    <div class="mb-3">
+      <label for="cantidad" class="letras-blancas">Cantidad de material:</label>
+      <input
+        type="number"
+        name="cantidad"
+        class="form-control"
+        value="{{cantidad.cantidad}}"
+      />
     </div>
-    <div class="col">
-      editar
+    <div class="mb-3">
+      <label for="unidadMedida" class="letras-blancas">Unidad de medida:</label>
+      <select name="unidadMedida" class="form-select" aria-label="Default select example">
+      <option selected>Seleccionar unidad de medida:</option>
+      <option value="Piezas">Piezas</option>
+      <option value="Metros-m">Metros-m</option>
+      <option value="Pulgadas-inch">Pulgadas-inch</option>
+      <option value="Litros">Litros</option>
+    </select>
     </div>
-    <div class="col">
-      eliminar
+    <div class="mb-3">
+      <label for="preciomx" class="letras-blancas">Precio unitario MX:</label>
+      <input
+        type="number"
+        name="precioUnitario"
+        class="form-control"
+        value="{{precioUnitario.precioUnitario}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="precioUSD" class="letras-blancas">Precio unitario USD:</label>
+      <input
+        type="text"
+        name="precioUnitarioUSD"
+        class="form-control"
+        value="{{precioUnitarioUSD.precioUnitarioUSD}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="proveedor" class="letras-blancas">Proveedor:</label>
+      <input
+        type="text"
+        name="proveedor"
+        class="form-control"
+        value="{{proveedor.proveedor}}"
+      />
+    </div>
+    <button class="btn btn-primary w-100" type="submit">
+      Guardar
+    </button>
+  </form>
+{{else}}
+  <form action="/" method="post">
+    <input
+      type="number"
+      placeholder="ingresar codigo de material"
+      name="codigo"
+      class="form-control my-2"
+    />
+    <input
+      type="text"
+      placeholder="ingresar nombre de material"
+      name="nombre"
+      class="form-control my-2"
+    />
+    <input
+      type="text"
+      placeholder="ingresar descripción"
+      name="descripcion"
+      class="form-control my-2"
+    />
+    <input
+      type="text"
+      placeholder="ingresar cantidad"
+      name="cantidad"
+      class="form-control my-2"
+    />
+    <select name="unidadMedida" class="form-select" aria-label="Default select example">
+      <option selected>Seleccionar unidad de medida:</option>
+      <option value="Piezas">Piezas</option>
+      <option value="Metros-m">Metros-m</option>
+      <option value="Pulgadas-inch">Pulgadas-inch</option>
+      <option value="Litros">Litros</option>
+    </select>
+    <input
+      type="text"
+      placeholder="Ingresar precio unitario en moneda nacional"
+      name="precioUnitario"
+      class="form-control my-2"
+    />
+    <input
+      type="text"
+      placeholder="Ingresar precio unitario en dolares"
+      name="precioUnitarioUSD"
+      class="form-control my-2"
+    />
+    <input
+      type="text"
+      placeholder="Ingresar proveedor"
+      name="proveedor"
+      class="form-control my-2"
+    />
+    <button type="submit" class="btn btn-primary w-100 mb-2">Agregar material</button>
+  </form>
+
+  <div class="container-fluid text-center tabla-material">
+    <div class="row">
+      <div class="col">
+        Codigo
+      </div>
+      <div class="col">
+        Material
+      </div>
+      <div class="col">
+        Descripción
+      </div>
+      <div class="col">
+        Existencia
+      </div>
+      <div class="col">
+        Unidad de medida
+      </div>
+      <div class="col">
+        Precio unitario MX
+      </div>
+      <div class="col">
+        Precio unitario USD
+      </div>
+      <div class="col">
+        Proveedor
+      </div>
+      <div class="col">
+        Editar
+      </div>
+      <div class="col">
+        Eliminar
+      </div>
     </div>
   </div>
-</div>
 
 {{/if}}

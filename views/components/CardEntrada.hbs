@@ -1,0 +1,87 @@
+<div class="container-fluid text-center tabla-material2">
+
+  <div class="text-center tabla-material">
+
+    <div class="row">
+
+      <div class="col">
+        Codigo
+      </div>
+      <div class="col">
+        Material
+      </div>
+      <div class="col">
+        Descripción
+      </div>
+      <div class="col">
+        Existencia
+      </div>
+      <div class="col">
+        Unidad de medida
+      </div>
+      <div class="col">
+        Precio unitario MX
+      </div>
+      <div class="col">
+        Precio unitario USD
+      </div>
+      <div class="col">
+        Proveedor
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+      {{item.codigo}}
+    </div>
+    <div class="col">
+      {{item.nombre}}
+    </div>
+    <div class="col">
+      {{item.descripcion}}
+    </div>
+    <div class="col">
+      {{item.cantidad}}
+    </div>
+    <div class="col">
+      {{item.unidadMedida}}
+    </div>
+    <div class="col">
+      <label>$</label>
+      {{item.precioUnitario}}
+    </div>
+    <div class="col">
+      <label>$</label>
+      {{item.precioUnitarioUSD}}
+    </div>
+    <div class="col">
+      {{item.proveedor}}
+    </div>
+
+    <div class="text-center p-3">
+      <form
+        class="row g-2 text-center div-form-entrada"
+        action="/entrada/{{item._id}}?_method=PUT"
+        method="POST"
+      >
+        <div class="col-10">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Ingrese cantidad"
+            name="cantidad"
+          />
+        </div>
+        <div class="col-2">
+          <button type="submit" class="btn btn-primary mb-3">Confirmar entrada</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

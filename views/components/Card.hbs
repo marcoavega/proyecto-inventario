@@ -1,4 +1,4 @@
-<div class="container text-center tabla-material2">
+<div class="container-fluid text-center tabla-material2">
   <div class="row">
     <div class="col">
       {{item.codigo}}
@@ -13,6 +13,20 @@
       {{item.cantidad}}
     </div>
     <div class="col">
+      {{item.unidadMedida}}
+    </div>
+    <div class="col">
+      <label>$</label>
+      {{item.precioUnitario}}
+    </div>
+    <div class="col">
+      <label>$</label>
+      {{item.precioUnitarioUSD}}
+    </div>
+    <div class="col">
+      {{item.proveedor}}
+    </div>
+    <div class="col">
       <a href="/editar/{{item._id}}" class="btn btn-warning">Editar</a>
     </div>
     <div class="col">
@@ -20,5 +34,3 @@
     </div>
   </div>
 </div>
-     
-
